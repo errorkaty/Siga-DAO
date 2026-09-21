@@ -10,7 +10,7 @@ Também tem violação do DIP porque "ServicoMatricula" está acoplada à implem
 Os métodos "matricular()" e "gerarRelatorio()" estão duplicando responsabilidades e dificultando a manutenção do código.
 
 ## 2. Definir a interface `AlunoDAO` com as operações do domínio: `inserir`, `buscarPorMatricula`, `listarTodos`, `atualizar` e `remover`. Use o vocabulário do domínio — sem `tabela`, `coluna` ou `INSERT` nos nomes.
-
+A interface "AlunoDAO" foi criada para definir as operações de acesso aos dados dos alunos, como "inserir()", "buscarPorMatricula()", "listarTodos()", "atualizar()" e "remover()". Utiliza exclusivamente o vocabulário do domínio do sistema, concentrando-se em conceitos como aluno e matrícula, e evitando referências a comandos SQL, tabelas ou colunas. Assim, a interface estabelece um contrato que permite diversas abordagens de persistência, sem amarrar-se a uma implementação específica.
 
 ## 3. Implementar `AlunoDAOMemoria`, guardando os alunos em um `Map<String, Aluno>` interno. (Opcionalmente, implemente também um `AlunoDAOBanco` que use o `BancoSimulado`.)
 
