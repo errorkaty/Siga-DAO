@@ -8,7 +8,7 @@ public interface AlunoDAO {
 
     Aluno buscarPorMatricula(String matricula);
 
-    List<Aluno> buscarTodos();
+    List<Aluno> listarTodos();
 
     void atualizar(Aluno aluno);
 
