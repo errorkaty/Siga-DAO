@@ -23,5 +23,7 @@ As instruções SQL e o acesso direto ao "BancoSimulado" também foram eliminado
 Agora "ServicoMatricula" se concentra só na lógica de negócios (corrigindo o SRP e o DIP).
 
 ## 5. Demonstrar a troca de implementação do DAO no `Main`, sem alterar uma linha da regra de negócio.
-
+Foi criado uma noca classe "AlunoDAOLista", uma nova implemnetação da interface "AlunoDAO" essa usando "List". 
+Foi modificado na classe "Main" de "AlunoDAOMemoria" para "AlunoDAOLista". Nenhuma modificação foi feita em "ServicoMatricula", porque a classe só depende da interface.
+O sistema continuou fazendo tudo normalmente (matriculando, listando e validando os alunos).
 
