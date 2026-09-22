@@ -18,7 +18,9 @@ Os métodos "inserir()", "buscarPorMatricula()", "listarTodos()", "atualizar()" 
 Com essa implementação, é possível armazenar e consultar alunos diretamente na memória, facilitando a execução e os testes do sistema sem precisar de uma infraestrutura de banco de dados.
 
 ## 4. Refatorar `ServicoMatricula` para receber um `AlunoDAO` pelo construtor e remover todo o SQL da classe; ela deve conter apenas regra de negócio.
-
+A classe "ServicoMatricula" foi refaurada para aceitar um objeto do tipo "AlunoDAO" por meio do construtor. Agora a classe depende da interface.
+As instruções SQL e o acesso direto ao "BancoSimulado" também foram eliminados. "matricular()" agora usa "AlunoDAO.inserir()" para armazenar o aluno e "gerarRelatorio()" utiliza "AlunoDAO.listarTodos()" para ter a lista de alunos.
+Agora "ServicoMatricula" se concentra só na lógica de negócios (corrigindo o SRP e o DIP).
 
 ## 5. Demonstrar a troca de implementação do DAO no `Main`, sem alterar uma linha da regra de negócio.
 
