@@ -13,7 +13,9 @@ Os métodos "matricular()" e "gerarRelatorio()" estão duplicando responsabilida
 A interface "AlunoDAO" foi criada para definir as operações de acesso aos dados dos alunos, como "inserir()", "buscarPorMatricula()", "listarTodos()", "atualizar()" e "remover()". Utiliza exclusivamente o vocabulário do domínio do sistema, concentrando-se em conceitos como aluno e matrícula, e evitando referências a comandos SQL, tabelas ou colunas. Assim, a interface estabelece um contrato que permite diversas abordagens de persistência, sem amarrar-se a uma implementação específica.
 
 ## 3. Implementar `AlunoDAOMemoria`, guardando os alunos em um `Map<String, Aluno>` interno. (Opcionalmente, implemente também um `AlunoDAOBanco` que use o `BancoSimulado`.)
-
+A classe "AlunoDAOMemoria" foi criada para implementar a interface "AlunoDAO". Os alunos são armazenados em um "Map<String, Aluno>", utilizando a matrícula como chave e o objeto "Aluno" como valor.
+Os métodos "inserir()", "buscarPorMatricula()", "listarTodos()", "atualizar()" e "remover()" utilizam esse "Map" para realizar as operações definidas pela interface, sem a necessidade de comandos SQL ou de um banco de dados.
+Com essa implementação, é possível armazenar e consultar alunos diretamente na memória, facilitando a execução e os testes do sistema sem precisar de uma infraestrutura de banco de dados.
 
 ## 4. Refatorar `ServicoMatricula` para receber um `AlunoDAO` pelo construtor e remover todo o SQL da classe; ela deve conter apenas regra de negócio.
 
